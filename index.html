@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Tentación en WhatsApp 🔥</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('foto1.jpg') no-repeat center center/cover;
+            color: #fff;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            flex-grow: 1;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 300px;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        .button {
+            background: linear-gradient(90deg, #ff4757, #ff6b81);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: linear-gradient(90deg, #ff6b81, #ff4757);
+            transform: scale(1.1);
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+        .footer {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>🔥 ¿Te atreves a hablar con este bombón? 🔥</h2>
+            <a class="button" href="https://wa.me/+51930191248?text=Hola%20bombón,%20no%20pude%20resistirme%20a%20escribirte..." target="_blank">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> 💋 Entra si te atreves 💋
+            </a>
+        </div>
+        <div class="box">
+            <h2>💰 Apoya con Yape 💰</h2>
+            <a class="button" href="yape://app" target="_blank">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Yape-logo.png" alt="Yape"> 📲 Yapea aquí 📲
+            </a>
+        </div>
+        <div class="box">
+            <h2>💳 Transferencia Bancaria 💳</h2>
+            <a class="button" href="bcpbank://app" target="_blank">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa"> Visa (BCP)
+            </a>
+            <a class="button" href="interbank://app" target="_blank">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"> Mastercard (Interbank)
+            </a>
+        </div>
+        <div class="box">
+            <h2>📱 Sígueme en redes 📱</h2>
+            <a class="button" href="https://instagram.com/tuusuario" target="_blank">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
+            </a>
+            <a class="button" href="https://facebook.com/tuusuario" target="_blank">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook
+            </a>
+            <a class="button" href="https://tiktok.com/@tuusuario" target="_blank">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok"> TikTok
+            </a>
+        </div>
+    </div>
+    <div class="footer">© 2025 Compañía Arles</div>
+</body>
+</html>
