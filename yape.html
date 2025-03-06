@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoya con Yape</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 255, 255, 0.2);
+            width: 350px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .number {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 255, 255, 0.2);
+            color: #0ff;
+            border-radius: 10px;
+            display: inline-block;
+            text-shadow: 0 0 10px cyan;
+        }
+        .button {
+            background: #0ff;
+            color: #000;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 15px rgba(0, 255, 255, 0.6);
+        }
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        /* Estilos de la notificación */
+        .notification {
+            position: fixed;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 255, 255, 0.9);
+            color: black;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.4);
+            transition: bottom 0.5s ease-in-out;
+        }
+        .show {
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>💰 Apoya con Yape 💰</h1>
+        <div class="number" id="yapeNumber">930191248</div>
+        <button class="button" onclick="copyNumber()">📋 Copiar Número</button>
+        <button class="button" onclick="openYape()">📲 Abrir Yape 📲</button>
+    </div>
+
+    <div id="notification" class="notification">Número copiado: 930191248</div>
+
+    <script>
+        function copyNumber() {
+            navigator.clipboard.writeText("930191248").then(() => {
+                let notification = document.getElementById("notification");
+                notification.classList.add("show");
+                setTimeout(() => {
+                    notification.classList.remove("show");
+                }, 3000);
+            });
+        }
+
+        function openYape() {
+            let yapeUrl = "yape://app";
+            let webUrl = "https://www.yape.com.pe/";
+
+            // Intentar abrir la app
+            window.location.href = yapeUrl;
+
+            // Si la app no se abre en 2 segundos, redirigir a la web
+            setTimeout(() => {
+                window.location.href = webUrl;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
+

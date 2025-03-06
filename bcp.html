@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoya con BCP</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 255, 255, 0.2);
+            width: 400px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .number {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 255, 255, 0.2);
+            color: #0ff;
+            border-radius: 10px;
+            display: inline-block;
+            text-shadow: 0 0 10px cyan;
+            width: 100%;
+        }
+        .button {
+            background: #0ff;
+            color: #000;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 15px rgba(0, 255, 255, 0.6);
+        }
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        /* Notificación flotante */
+        .notification {
+            position: fixed;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 255, 255, 0.9);
+            color: black;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.4);
+            transition: bottom 0.5s ease-in-out;
+        }
+        .show {
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>💳 Apoya con BCP 💳</h1>
+        <div class="number" id="cuentaBCP">Cuenta BCP: 19103201649088</div>
+        <button class="button" onclick="copyNumber('19103201649088')">📋 Copiar Número</button>
+        
+        <div class="number" id="interbancariaBCP">Cuenta Interbancaria: 00219110320164908852</div>
+        <button class="button" onclick="copyNumber('00219110320164908852')">📋 Copiar Número</button>
+    </div>
+
+    <div id="notification" class="notification">Número copiado</div>
+
+    <script>
+        function copyNumber(number) {
+            navigator.clipboard.writeText(number).then(() => {
+                let notification = document.getElementById("notification");
+                notification.textContent = `Número copiado: ${number}`;
+                notification.classList.add("show");
+                setTimeout(() => {
+                    notification.classList.remove("show");
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
